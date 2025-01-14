@@ -7,7 +7,7 @@ This application enables users to search for train details, check seat availabil
 * **HTML**  
 * **CSS**  
 * **JavaScript**  
-* **AngularJS** 
+* **AngularJS - v1.8.2**
 * **IRCTC Free API**  
   - [API Documentation](https://www.allthingsdev.co/apimarketplace/endpoints/irctc/66601c6b98e9e140d6544339)
 
