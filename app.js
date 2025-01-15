@@ -18,7 +18,7 @@ angular.module('IRCTCApp', [
     });
 
     // If you're running on a development server, consider disabling HTML5 mode if there's an issue
-    $locationProvider.html5Mode(false)({
+    $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
     });
