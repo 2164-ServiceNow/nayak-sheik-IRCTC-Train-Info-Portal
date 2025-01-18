@@ -1,9 +1,16 @@
-<!-- components/searchStation/searchStation.html -->
 <div>
-    <h1>Search Stations</h1>
-    <ul>
-        <li ng-repeat="station in searchStations">
-            {{ station.name }}
-        </li>
-    </ul>
+    <h3>Search Stations:</h3>
+
+    <!-- Check if searchStations data is available -->
+    <div ng-if="searchStations">
+        <h4>Results:</h4>
+        <div ng-repeat = "station in searchStations.data" class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Station Name and Details</h5>
+              <h5 class="card-title">{{station.name}}</h5>
+              <p class="card-text"><strong>Code:</strong> {{station.code}}</p>
+              <p class="card-text"><strong>State:</strong> {{station.state_name || 'Not Available'}}</p>
+            </div>
+        </div>
+    </div>
 </div>

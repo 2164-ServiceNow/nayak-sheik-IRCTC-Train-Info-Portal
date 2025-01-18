@@ -4,22 +4,25 @@ angular.module('IRCTCApp', [
     'ngRoute',
     'searchStationPage',
     'searchBar',
-    'searchStation'
+    'searchStation',
+    'getPNRStatus',
+    'getPNRStatusPage'
 ])
 
-.config(function($routeProvider, $locationProvider) {
+.config(function($routeProvider) {
     $routeProvider
     .when("/", {
         templateUrl: "pages/main.html"
     })
     .when("/searchStation", {
         templateUrl: 'pages/searchStationPage/searchStationPage.html',
-        controller: 'StationNameCtrl'  // Ensure correct controller name with proper case
-    });
-
-    // If you're running on a development server, consider disabling HTML5 mode if there's an issue
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
+        controller: 'StationNameCtrl'
+    })
+    .when("/getPNRStatus", {
+        templateUrl : 'pages/getPNRStatusPage/getPNRStatusPage.html',
+        controller : 'getPNRStatusCtrl'
+    })
+    .otherwise({
+        redirectTo: '/'  // Optional: Default route for unknown paths
     });
 });
