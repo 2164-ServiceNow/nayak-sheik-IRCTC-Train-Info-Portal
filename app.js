@@ -6,7 +6,8 @@ angular.module('IRCTCApp', [
     'searchBar',
     'searchStation',
     'getPNRStatus',
-    'getPNRStatusPage'
+    'getPNRStatusPage',
+    'seatAvailibility'
 ])
 
 .config(function($routeProvider) {
