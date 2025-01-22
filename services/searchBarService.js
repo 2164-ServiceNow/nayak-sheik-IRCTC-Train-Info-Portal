@@ -4,7 +4,6 @@ angular.module('IRCTCApp')
 
         this.setQuery = function(query){
             this.query = query
-            console.log(`${query} from setQuery in the service`)
         }
 
         this.getQuery = function(){

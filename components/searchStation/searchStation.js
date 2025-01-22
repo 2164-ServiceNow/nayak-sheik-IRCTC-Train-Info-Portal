@@ -3,6 +3,7 @@ angular.module('searchStation', [])
     templateUrl: 'components/searchStation/searchStation.html',
     controller: function($scope, $http, searchBarService) {
         $scope.searchStations = "";
+        $scope.searchValue = ''
 
         $scope.$watch(function() {
             return searchBarService.getQuery();

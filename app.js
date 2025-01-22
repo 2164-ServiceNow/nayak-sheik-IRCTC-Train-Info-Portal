@@ -6,7 +6,11 @@ angular.module('IRCTCApp', [
     'searchBar',
     'searchStation',
     'getPNRStatus',
-    'getPNRStatusPage'
+    'getPNRStatusPage',
+    'searchTrain',
+    'searchTrainPage',
+    'getTrainSchedule',
+    'getTrainSchedulePage'
 ])
 
 .config(function($routeProvider) {
@@ -20,7 +24,15 @@ angular.module('IRCTCApp', [
     })
     .when("/getPNRStatus", {
         templateUrl : 'pages/getPNRStatusPage/getPNRStatusPage.html',
-        controller : 'getPNRStatusCtrl'
+        controller : 'PnrStatusCtrl'
+    })
+    .when("/searchTrain", {
+        templateUrl : 'pages/searchTrainPage/searchTrainPage.html',
+        controller : 'TrainNameCtrl'
+    })
+    .when("/getTrainSchedule", {
+        templateUrl : 'pages/getTrainSchedulePage/getTrainSchedulePage.html',
+        controller : 'TrainScheduleCtrl'
     })
     .otherwise({
         redirectTo: '/'  // Optional: Default route for unknown paths

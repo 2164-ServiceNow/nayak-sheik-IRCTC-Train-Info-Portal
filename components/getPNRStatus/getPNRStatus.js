@@ -2,8 +2,9 @@ angular.module('getPNRStatus', [])
 .component('getPNRStatus', {
     templateUrl: 'components/getPNRStatus/getPNRStatus.html',
     controller: function($scope, $http, searchBarService) {
-        $scope.pnrStatus = "";
-        
+        $scope.pnrStatus = {};  // Initialize as an empty object to store response data
+        $scope.searchValue = '';
+
         // Watch for changes in the search bar query
         $scope.$watch(function() {
             return searchBarService.getQuery();
@@ -27,11 +28,17 @@ angular.module('getPNRStatus', [])
                     headers: myHeaders
                 }).then((response) => {
                     console.log("API Response:", response);
-                    $scope.pnrStatus = response.data; // Update the pnrStatus with the response data
+                    // Handle the response based on the expected data structure
+                    if (response.data) {
+                        $scope.pnrStatus = response.data; // Update pnrStatus with response data
+                    } else {
+                        $scope.pnrStatus = {}; // Reset if no data
+                    }
                 }).catch((error) => {
-                    console.error("Error fetching PNR status:", error); // Handle any errors
+                    console.error("Error fetching PNR status:", error); // Handle errors
+                    $scope.pnrStatus = {}; // Reset on error
                 });
             }
-        });        
+        });
     }
 });
