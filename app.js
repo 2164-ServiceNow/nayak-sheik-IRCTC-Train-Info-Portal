@@ -7,8 +7,12 @@ angular.module('IRCTCApp', [
     'searchStation',
     'getPNRStatus',
     'getPNRStatusPage',
-
-.config(function($routeProvider) {
+    'searchTrain',
+    'searchTrainPage',
+    'getTrainSchedule',
+    'getTrainSchedulePage'
+])
+    .config(function($routeProvider) {
     $routeProvider
     .when("/", {
         templateUrl: "pages/main.html"
