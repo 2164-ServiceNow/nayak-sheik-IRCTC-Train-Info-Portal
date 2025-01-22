@@ -7,15 +7,6 @@ angular.module('IRCTCApp', [
     'searchStation',
     'getPNRStatus',
     'getPNRStatusPage',
-<<<<<<< HEAD
-    'searchTrain',
-    'searchTrainPage',
-    'getTrainSchedule',
-    'getTrainSchedulePage'
-=======
-    'seatAvailibility'
->>>>>>> 36cc101be18ed46b32fca6fdd2f5c49f5f784451
-])
 
 .config(function($routeProvider) {
     $routeProvider
