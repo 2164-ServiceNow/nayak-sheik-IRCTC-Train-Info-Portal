@@ -1,0 +1,16 @@
+<div>
+    <h3>Seat Availability:</h3>
+
+    <!-- Check if seatAvailibility data is available -->
+    <div ng-if="seatAvailibility">
+        <h4>Results:</h4>
+        <div ng-repeat="seat in seatAvailibility.data" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Train Details</h5>
+                <h5 class="card-title">{{seat.train_name || 'Train Name Not Available'}}</h5>
+                <p class="card-text"><strong>Train Number:</strong> {{seat.train_number || 'Not Available'}}</p>
+                <p class="card-text"><strong>Availability:</strong> {{seat.availability || 'Not Available'}}</p>
+            </div>
+        </div>
+    </div>
+</div>

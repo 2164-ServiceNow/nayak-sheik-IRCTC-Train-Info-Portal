@@ -1,0 +1,16 @@
+<div>
+    <h3>Train By Station:</h3>
+
+    <!-- Check if trainByStation data is available -->
+    <div ng-if="getTrainsByStation"> 
+        <h4>Results:</h4>
+        <div ng-repeat="station in getTrainsByStation.data" class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Station Name and Details</h5>
+              <h5 class="card-title">{{station.name}}</h5>
+              <p class="card-text"><strong>Code:</strong> {{station.code}}</p>
+              <p class="card-text"><strong>State:</strong> {{station.state_name || 'Not Available'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
