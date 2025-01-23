@@ -1,0 +1,42 @@
+<div>
+    <h3>Live Train Status:</h3>
+
+    <!-- Dynamic Form for Query Parameters -->
+    <div>
+        <label>From Station Code:</label>
+        <input type="text" ng-model="fromStationCode" placeholder="e.g., BVI" />
+    </div>
+
+    <div>
+        <label>To Station Code:</label>
+        <input type="text" ng-model="toStationCode" placeholder="e.g., ST" />
+    </div>
+
+    <div>
+        <label>Hours:</label>
+        <input type="number" ng-model="hours" placeholder="e.g., 2" />
+    </div>
+
+    <!-- Button to Trigger Live Station Fetch -->
+    <button ng-click="getLiveStation()">Get Live Station Status</button>
+
+    <!-- Display Results if Available -->
+    <div ng-if="liveStationData && liveStationData.trains && liveStationData.trains.length > 0">
+        <h4>Results:</h4>
+        <div ng-repeat="train in liveStationData.trains" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Train Details</h5>
+                <p class="card-text"><strong>Train Name:</strong> {{train.train_name || 'Train Name Not Available'}}</p>
+                <p class="card-text"><strong>Train Number:</strong> {{train.train_number || 'Not Available'}}</p>
+                <p class="card-text"><strong>Arrival Time:</strong> {{train.arrival_time || 'Not Available'}}</p>
+                <p class="card-text"><strong>Departure Time:</strong> {{train.departure_time || 'Not Available'}}</p>
+                <p class="card-text"><strong>Status:</strong> {{train.current_status || 'Not Available'}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Display Message if No Results Found -->
+    <div ng-if="!liveStationData || !liveStationData.trains || liveStationData.trains.length === 0">
+        <h4>No trains available or no results found.</h4>
+    </div>
+</div>

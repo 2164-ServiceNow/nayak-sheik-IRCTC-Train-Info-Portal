@@ -14,7 +14,9 @@ angular.module('IRCTCApp', [
     'seatAvailibility',
     'seatAvailibilityPage',
     'getTrainsByStation',
-    'getTrainsByStationPage'
+    'getTrainsByStationPage',
+    'getLiveTrainStatus',
+    'getLiveTrainStatusPage'
 ])
     .config(function($routeProvider) {
     $routeProvider
@@ -44,6 +46,10 @@ angular.module('IRCTCApp', [
     .when("/getTrainsByStation",{
         templateUrl:'pages/getTrainsByStationPage/getTrainsByStationPage.html',
         controller:'NameOfStationCtrl'
+    })
+    .when("/getLiveTrainStatus",{
+        templateUrl:'pages/getLiveTrainStatusPage/getLiveTrainStatusPage.html',
+        controller:'LiveTrainStatusCtrl'
     })
     .otherwise({
         redirectTo: '/'  // Optional: Default route for unknown paths
