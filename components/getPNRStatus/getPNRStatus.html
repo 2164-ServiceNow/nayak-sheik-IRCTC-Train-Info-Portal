@@ -2,24 +2,23 @@
     <h2>PNR Status</h2>
 
     <div ng-if="pnrStatus">
-        <h3>Results:</h3>
         <div ng-repeat="status in pnrStatus.data" class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">PNR Status</h5>
                 <h5 class="card-title">{{status.pnr}}</h5>
-                <p class="card-text"><strong>Train Number:</strong> {{status.trainNo}}</p>
+                <p class="card-text"><strong>Train Number:</strong> {{status.trainNo || 'null'}}</p>
                 <p class="card-text"><strong>Train Name:</strong> {{status.trainName || 'Not Available'}}</p>
-                <p class="card-text"><strong>Booking Date:</strong> {{status.bookingDate}}</p>
-                <p class="card-text"><strong>Quota:</strong> {{status.quota}}</p>
-                <p class="card-text"><strong>From:</strong> {{status.from}}</p>
-                <p class="card-text"><strong>To:</strong> {{status.to}}</p>
-                <p class="card-text"><strong>Class:</strong> {{status.class}}</p>
-                <p class="card-text"><strong>Chart Prepared:</strong> {{status.chartPrepared}}</p>
-                <p class="card-text"><strong>Boarding Station Name:</strong> {{status.boardingStationName}}</p>
-                <p class="card-text"><strong>Train Status:</strong> {{status.trainStatus}}</p>
-                <p class="card-text"><strong>Reservation Upto Name:</strong> {{status.reservationUptoName}}</p>
-                <p class="card-text"><strong>Arrival Time:</strong> {{status.arrivalTime}}</p>
-                <p class="card-text"><strong>Departure Time:</strong> {{status.departureTime}}</p>
+                <p class="card-text"><strong>Booking Date:</strong> {{status.bookingDate || 'null'}}</p>
+                <p class="card-text"><strong>Quota:</strong> {{status.quota || 'null'}}</p>
+                <p class="card-text"><strong>From:</strong> {{status.from || 'null'}}</p>
+                <p class="card-text"><strong>To:</strong> {{status.to || 'null'}}</p>
+                <p class="card-text"><strong>Class:</strong> {{status.class || 'null'}}</p>
+                <p class="card-text"><strong>Chart Prepared:</strong> {{status.chartPrepared || 'false'}}</p>
+                <p class="card-text"><strong>Boarding Station Name:</strong> {{status.boardingStationName || 'null'}}</p>
+                <p class="card-text"><strong>Train Status:</strong> {{status.trainStatus || 'null'}}</p>
+                <p class="card-text"><strong>Reservation Upto Name:</strong> {{status.reservationUptoName || 'null'}}</p>
+                <p class="card-text"><strong>Arrival Time:</strong> {{status.arrivalTime || 'null'}}</p>
+                <p class="card-text"><strong>Departure Time:</strong> {{status.departureTime || 'null'}}</p>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
-angular.module('getPNRStatus', [])
-.component('getPNRStatus', {
-    templateUrl: 'components/getPNRStatus/getPNRStatus.html',
+angular.module('getPnrStatus', [])
+.component('getPnrStatus', {
+    templateUrl: 'components/getPnrStatus/getPnrStatus.html',
     controller: function($scope, $http, searchBarService) {
         $scope.pnrStatus = {};  // Initialize as an empty object to store response data
         $scope.searchValue = '';
@@ -10,7 +10,6 @@ angular.module('getPNRStatus', [])
             return searchBarService.getQuery();
         }, function(newQuery) {
             if (newQuery) {
-                console.log("New Query:", newQuery); // Debug log
                 $scope.searchValue = newQuery; // Track the current query
 
                 // Define the headers for the request

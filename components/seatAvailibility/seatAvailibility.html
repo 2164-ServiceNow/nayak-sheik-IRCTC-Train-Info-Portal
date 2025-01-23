@@ -1,10 +1,44 @@
 <div>
     <h3>Seat Availability:</h3>
 
-    <!-- Check if seatAvailibility data is available -->
-    <div ng-if="seatAvailibility">
+    <!-- Dynamic Form for Query Parameters -->
+    <div>
+        <label>Class Type:</label>
+        <input type="text" ng-model="classType" placeholder="e.g., SL" />
+    </div>
+
+    <div>
+        <label>From Station Code:</label>
+        <input type="text" ng-model="fromStationCode" placeholder="e.g., RJY" />
+    </div>
+
+    <div>
+        <label>Quota:</label>
+        <input type="text" ng-model="quota" placeholder="e.g., GN" />
+    </div>
+
+    <div>
+        <label>To Station Code:</label>
+        <input type="text" ng-model="toStationCode" placeholder="e.g., SCN" />
+    </div>
+
+    <div>
+        <label>Train No:</label>
+        <input type="text" ng-model="trainNo" placeholder="e.g., 12806" />
+    </div>
+
+    <div>
+        <label>Date:</label>
+        <input type="date" ng-model="date" placeholder="e.g., 2025-22-01" />
+    </div>
+
+    <!-- Button to Trigger Seat Search -->
+    <button ng-click="searchSeats()">Search</button>
+
+    <!-- Display Results if Available -->
+    <div ng-if="seatAvailabilities && seatAvailabilities.data && seatAvailabilities.data.length > 0">
         <h4>Results:</h4>
-        <div ng-repeat="seat in seatAvailibility.data" class="card" style="width: 18rem;">
+        <div ng-repeat="seat in seatAvailabilities.data" class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Train Details</h5>
                 <h5 class="card-title">{{seat.train_name || 'Train Name Not Available'}}</h5>
@@ -12,5 +46,10 @@
                 <p class="card-text"><strong>Availability:</strong> {{seat.availability || 'Not Available'}}</p>
             </div>
         </div>
+    </div>
+
+    <!-- Display Message if No Results Found -->
+    <div ng-if="!seatAvailabilities || seatAvailabilities.data.length === 0">
+        <h4>No seats available or no results found.</h4>
     </div>
 </div>

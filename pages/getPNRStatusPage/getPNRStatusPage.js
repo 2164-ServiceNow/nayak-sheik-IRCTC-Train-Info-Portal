@@ -1,4 +1,4 @@
-angular.module('getPNRStatusPage', [])
+angular.module('getPnrStatusPage', [])
     .controller('PnrStatusCtrl', function($scope){
-        $scope.pnr = ""
+        $scope.pnrStatus = ""
     })

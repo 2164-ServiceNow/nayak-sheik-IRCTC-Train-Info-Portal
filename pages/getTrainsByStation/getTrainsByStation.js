@@ -1,4 +1,4 @@
 angular.module('getTrainsByStation', [])
-    .controller('NameOfStation', function($scope){
+    .controller('NameOfStationCtrl', function($scope){
         $scope.searchTrain = "";
     })
