@@ -14,7 +14,7 @@ angular.module('IRCTCApp', [
     'seatAvailibility',
     'seatAvailibilityPage',
     'getTrainsByStation',
-    'getTrainsByStation'
+    'getTrainsByStationPage'
 ])
     .config(function($routeProvider) {
     $routeProvider
@@ -42,7 +42,7 @@ angular.module('IRCTCApp', [
         controller:'AvailableSeatsCtrl'
     })
     .when("/getTrainsByStation",{
-        templateUrl:'pages/searchStationPage/searchStationPage.html',
+        templateUrl:'pages/getTrainsByStationPage/getTrainsByStationPage.html',
         controller:'NameOfStationCtrl'
     })
     .otherwise({

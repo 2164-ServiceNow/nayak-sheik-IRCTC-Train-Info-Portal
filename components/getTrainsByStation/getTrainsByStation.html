@@ -2,14 +2,21 @@
     <h3>Train By Station:</h3>
 
     <!-- Check if trainByStation data is available -->
-    <div ng-if="getTrainsByStation"> 
+    <div ng-if="getTrainsByStations">
         <h4>Results:</h4>
-        <div ng-repeat="station in getTrainsByStation.data" class="card" style="width: 18rem;">
+        <div ng-repeat="train in getTrainsByStations.data.originating" class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Station Name and Details</h5>
-              <h5 class="card-title">{{station.name}}</h5>
-              <p class="card-text"><strong>Code:</strong> {{station.code}}</p>
-              <p class="card-text"><strong>State:</strong> {{station.state_name || 'Not Available'}}</p>
+                <h5 class="card-title">Station Name and Details</h5>
+                
+                <!-- Display train details -->
+                <h5 class="card-title">{{train.trainNo}} - {{train.trainName}}</h5>
+                <p class="card-text"><strong>Departure Time:</strong> {{train.departureTime}}</p>
+                
+                <!-- Display available classes -->
+                <p class="card-text"><strong>Classes:</strong></p>
+                <ul>
+                    <li ng-repeat="classType in train.classes">{{classType}}</li>
+                </ul>
             </div>
         </div>
     </div>

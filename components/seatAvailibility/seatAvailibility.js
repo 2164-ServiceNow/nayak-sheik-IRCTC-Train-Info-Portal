@@ -1,7 +1,7 @@
 angular.module('seatAvailibility', [])
 .component('seatAvailibility', {
     templateUrl: 'components/seatAvailibility/seatAvailibility.html',
-    controller: function($scope, $http, searchBarService) {
+    controller: function($scope, $http) {
         $scope.seatAvailabilities = [];
 
         // Initialize query parameters with default values
@@ -11,6 +11,12 @@ angular.module('seatAvailibility', [])
         $scope.toStationCode = ''
         $scope.trainNo = ''
         $scope.date = ''
+
+        // $scope.statusData = {
+        //     status : '',
+        //     message: '',
+        //     timestamp: ''
+        // }
 
         // Search function to fetch seat availability based on input values
         $scope.searchSeats = function() {

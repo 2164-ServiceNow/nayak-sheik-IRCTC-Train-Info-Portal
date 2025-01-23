@@ -1,8 +1,8 @@
 angular.module('getTrainsByStation', [])
 .component('getTrainsByStation', {
-    templateUrl: 'components/trainsByStation/getTrainsByStation.html',
+    templateUrl: 'components/getTrainsByStation/getTrainsByStation.html',
     controller: function($scope, $http, searchBarService) {
-        $scope.getTrainsByStation = "";
+        $scope.getTrainsByStations = "";
         $scope.searchValue = '';
 
         $scope.$watch(function() {
@@ -24,7 +24,7 @@ angular.module('getTrainsByStation', [])
                     headers: myHeaders
                 }).then((response) => {
                     console.log("API Response:", response);
-                    $scope.getTrainsByStation = response.data;
+                    $scope.getTrainsByStations = response.data;
                 }).catch((error) => {
                     console.error("Error fetching search stations:", error);
                 });
