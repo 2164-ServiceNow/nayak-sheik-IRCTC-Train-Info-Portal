@@ -49,11 +49,11 @@
     </div>
 
     <!-- Display Message if No Results Found -->
-    <div ng-if="!seatAvailabilities || seatAvailabilities.data.length === 0">
+    <div ng-if="!seatAvailabilities || !seatAvailabilities.data || seatAvailabilities.data.length === 0">
         <h4>No seats available or no results found.</h4>
     </div>
 
-    <div ng-if="statusData.status===false">
+    <div ng-if="statusData && statusData.status === false">
         <p>{{statusData.message}}</p>
     </div>
 </div>
