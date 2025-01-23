@@ -26,10 +26,11 @@ angular.module('getPnrStatus', [])
                     params: { query: newQuery }, // Send the query as a parameter
                     headers: myHeaders
                 }).then((response) => {
-                    console.log("API Response:", response);
-                    // Handle the response based on the expected data structure
-                    if (response.data) {
-                        $scope.pnrStatus = response.data; // Update pnrStatus with response data
+                    console.log("API Response:", response.data);
+
+                    // Update pnrStatus with the data from response
+                    if (response.data && response.data.data) {
+                        $scope.pnrStatus = response.data.data; // Assign only the data object
                     } else {
                         $scope.pnrStatus = {}; // Reset if no data
                     }
