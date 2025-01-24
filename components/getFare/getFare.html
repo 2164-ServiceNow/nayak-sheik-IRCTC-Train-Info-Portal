@@ -1,0 +1,30 @@
+<div>
+    <h3>Get Fare Details:</h3>
+
+    <!-- Form for input fields -->
+    <div>
+        <label for="trainNo">Train Number:</label>
+        <input type="text" id="trainNo" ng-model="trainNo" placeholder="Enter Train Number">
+
+        <label for="fromStationCode">From Station Code:</label>
+        <input type="text" id="fromStationCode" ng-model="fromStationCode" placeholder="Enter From Station Code">
+
+        <label for="toStationCode">To Station Code:</label>
+        <input type="text" id="toStationCode" ng-model="toStationCode" placeholder="Enter To Station Code">
+
+        <button ng-click="getFare()">Get Fare</button>
+    </div>
+
+    <!-- Check if fareData is available -->
+    <div ng-if="fareData">
+        <h4>Fare Details:</h4>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Train Fare Information</h5>
+
+                <!-- Display fare details -->
+                <p class="card-text"><strong>Fare:</strong> {{fareData.data.general[0].fare}}</p>
+            </div>
+        </div>
+    </div>
+</div>
