@@ -1,26 +1,36 @@
-<div>
-    <h2>PNR Status</h2>
-
-    <!-- Check if pnrStatus is available -->
-    <div ng-if="pnrStatus && pnrStatus.Pnr">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">PNR Status</h5>
-                <h5 class="card-title">{{pnrStatus.Pnr}}</h5>
-                <p class="card-text"><strong>Train Number:</strong> {{pnrStatus.TrainNo || 'null'}}</p>
-                <p class="card-text"><strong>Train Name:</strong> {{pnrStatus.TrainName || 'Not Available'}}</p>
-                <p class="card-text"><strong>Booking Date:</strong> {{pnrStatus.BookingDate || 'null'}}</p>
-                <p class="card-text"><strong>Quota:</strong> {{pnrStatus.Quota || 'null'}}</p>
-                <p class="card-text"><strong>From:</strong> {{pnrStatus.From || 'null'}}</p>
-                <p class="card-text"><strong>To:</strong> {{pnrStatus.To || 'null'}}</p>
-                <p class="card-text"><strong>Class:</strong> {{pnrStatus.Class || 'null'}}</p>
-                <p class="card-text"><strong>Chart Prepared:</strong> {{pnrStatus.ChartPrepared || 'false'}}</p>
-                <p class="card-text"><strong>Boarding Station Name:</strong> {{pnrStatus.BoardingStationName || 'null'}}</p>
-                <p class="card-text"><strong>Train Status:</strong> {{pnrStatus.TrainStatus || 'null'}}</p>
-                <p class="card-text"><strong>Reservation Upto Name:</strong> {{pnrStatus.ReservationUptoName || 'null'}}</p>
-                <p class="card-text"><strong>Arrival Time:</strong> {{pnrStatus.ArrivalTime || 'null'}}</p>
-                <p class="card-text"><strong>Departure Time:</strong> {{pnrStatus.DepartureTime || 'null'}}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="components/getPnrStatus/getPnrStatus.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Heading Section -->
+        <h3 class="heading">PNR Status</h3>
+    
+        <!-- Check if pnrStatus is available -->
+        <div ng-if="pnrStatus && pnrStatus.Pnr">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">PNR Status</h5>
+                    <h5 class="card-heading">{{pnrStatus.Pnr}}</h5>
+                    <p class="card-text"><strong>Train Number:</strong> {{pnrStatus.TrainNo || 'null'}}</p>
+                    <p class="card-text"><strong>Train Name:</strong> {{pnrStatus.TrainName || 'Not Available'}}</p>
+                    <p class="card-text"><strong>Booking Date:</strong> {{pnrStatus.BookingDate || 'null'}}</p>
+                    <p class="card-text"><strong>Quota:</strong> {{pnrStatus.Quota || 'null'}}</p>
+                    <p class="card-text"><strong>From:</strong> {{pnrStatus.From || 'null'}}</p>
+                    <p class="card-text"><strong>To:</strong> {{pnrStatus.To || 'null'}}</p>
+                    <p class="card-text"><strong>Class:</strong> {{pnrStatus.Class || 'null'}}</p>
+                    <p class="card-text"><strong>Chart Prepared:</strong> {{pnrStatus.ChartPrepared || 'false'}}</p>
+                    <p class="card-text"><strong>Boarding Station Name:</strong> {{pnrStatus.BoardingStationName || 'null'}}</p>
+                    <p class="card-text"><strong>Train Status:</strong> {{pnrStatus.TrainStatus || 'null'}}</p>
+                    <p class="card-text"><strong>Reservation Upto Name:</strong> {{pnrStatus.ReservationUptoName || 'null'}}</p>
+                    <p class="card-text"><strong>Arrival Time:</strong> {{pnrStatus.ArrivalTime || 'null'}}</p>
+                    <p class="card-text"><strong>Departure Time:</strong> {{pnrStatus.DepartureTime || 'null'}}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>
