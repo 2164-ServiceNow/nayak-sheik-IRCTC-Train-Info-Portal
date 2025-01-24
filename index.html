@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="IRCTCApp">
 <head>
-
+ 
     <!-- Load AngularJS 1.8.2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js"></script>
-    
+   
     <!-- Load Angular Route for routing between pages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js"></script>
-
+ 
     <!-- Load Angular Resource for HTTP requests -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular-resource.min.js"></script>
-
+ 
     <!-- Bootstrap 4 for styling -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+ 
     <title>IRCTC SPA</title>
-
+ 
     <style>
         .nav-links {
             display: flex;
@@ -25,7 +25,7 @@
             background-color: #f8f9fa; /* Background color for the nav */
             border-radius: 10px; /* Rounded corners for the navigation box */
         }
-
+ 
         .nav-links a {
             padding: 10px 20px;
             background-color: #007bff;
@@ -35,11 +35,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
         }
-
+ 
         .nav-links a:hover {
             background-color: #0056b3; /* Darker blue when hovered */
         }
-
+ 
         /* Style for marquee */
         .marquee {
             background-color: #f1f1f1;
@@ -50,7 +50,7 @@
         }
     </style>
 </head>
-<body>
+<body ng-controller = "AppController">
     <div class="nav-links">
         <!-- Navigation links -->
         <a href="#/">Main Page</a>
@@ -64,7 +64,7 @@
         <a href="#!/seatAvailibility">Find Available seats</a>
        
     </div>
-
+ 
     <!-- Marquee with captions -->
     <marquee class="marquee" scrollamount="7">
         "Your Journey Begins Here – Book Trains, Check Schedules, and More!" &nbsp; | &nbsp;
@@ -80,15 +80,16 @@
         "Stay on Track with IRCTC – Your Complete Train Travel Companion" &nbsp; | &nbsp;
         "From Booking to Seat Availability – IRCTC Gets You There" &nbsp; | &nbsp;
         "Making Every Journey Comfortable – Book Your Train Today with IRCTC" &nbsp; | &nbsp;
-        "Your Gateway to Smooth Train Travel – Book, Track, and Travel!" 
+        "Your Gateway to Smooth Train Travel – Book, Track, and Travel!"
     </marquee>
-
-    <!-- Search bar component (if you have one) -->
-    <searchbar></searchbar>
-
+ 
+    <div ng-if="!isSearchBarHiddenPage()">
+        <searchbar></searchbar>
+    </div>
+ 
     <!-- This is where views will be injected based on routes -->
     <div ng-view></div>
-
+ 
     <!-- Script Files -->
     <script src="app.js"></script>
     <script src="pages/searchStationPage/searchStationPage.js"></script>

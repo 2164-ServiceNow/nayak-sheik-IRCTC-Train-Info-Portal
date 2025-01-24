@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('IRCTCApp', [
     'ngRoute',
     'searchStationPage',
@@ -20,7 +18,7 @@ angular.module('IRCTCApp', [
     'getTrainClasses',
     'getTrainClassesPage'
 ])
-    .config(function($routeProvider) {
+.config(function($routeProvider) {
     $routeProvider
     .when("/", {
         templateUrl: "pages/main.html"
@@ -60,4 +58,11 @@ angular.module('IRCTCApp', [
     .otherwise({
         redirectTo: '/'  // Optional: Default route for unknown paths
     });
+})
+.controller('AppController', function($scope, $location) {
+    // Function to check if we are on the 'seatAvailibility' or 'getFare' page
+    $scope.isSearchBarHiddenPage = function() {
+        return $location.path() === '/seatAvailibility' || $location.path() === '/getFare';
+    };
 });
+ 
