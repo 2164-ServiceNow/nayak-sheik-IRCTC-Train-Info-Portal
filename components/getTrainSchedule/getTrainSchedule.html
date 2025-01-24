@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="components/getTrainSchedule/getTrainSchedule.css">
+<body>
+
+    <div>
+        <h3 class="heading">Train Schedule Details:</h3>
+    
+        <!-- Check if trainSchedule data is available -->
+        <div ng-if="trainSchedule && trainSchedule.data">
+            <h4>Train Information</h4>
+            <p><strong>Train Name:</strong> {{trainSchedule.data.trainName}}</p>
+            <p><strong>Train Number:</strong> {{trainSchedule.data.trainNumber}}</p>
+            <p><strong>Train Type:</strong> {{trainSchedule.data.trainType}}</p>
+            
+            <h5>Available Classes:</h5>
+            <ul>
+                <li ng-repeat="class in trainSchedule.data.class">{{class.name}} ({{class.value}})</li>
+            </ul>
+            
+            <h5>Available Quotas:</h5>
+            <ul>
+                <li ng-repeat="quota in trainSchedule.data.quota">{{quota.name}} ({{quota.value}})</li>
+            </ul>
+    
+            <h4>Route Details:</h4>
+            <div ng-repeat="station in trainSchedule.data.route" class="card" style="width: 18rem; margin-bottom: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{station.station_name}}</h5>
+                    <p class="card-text"><strong>Station Code:</strong> {{station.station_code}}</p>
+                    <p class="card-text"><strong>State:</strong> {{station.state_name}}</p>
+                    <p class="card-text"><strong>Arrival Time:</strong> {{station.sta_min}}</p>
+                    <p class="card-text"><strong>Platform:</strong> {{station.platform_number}}</p>
+                    <p class="card-text"><strong>Distance from Source:</strong> {{station.distance_from_source}} km</p>
+                    <p class="card-text"><strong>On Time Rating:</strong> {{station.on_time_rating}}</p>
+                    <p class="card-text"><strong>Halt Duration:</strong> {{station.halt}} minutes</p>
+                    <p class="card-text"><strong>Smart Station:</strong> {{station.is_smart_station ? 'Yes' : 'No'}}</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
+
+

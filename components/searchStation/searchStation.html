@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="components/searchStation/searchStation.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Heading Section -->
+        <h3 class="heading">Search Stations</h3>
+    
+        <!-- Check if searchStations data is available -->
+        <div ng-if="searchStations">
+            <h4>Results:</h4>
+
+            <!-- Container for cards to display results -->
+            <div class="card-container">
+                <div ng-repeat="station in searchStations.data" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Station Name and Details</h5>
+                        <h5 class="card-heading">{{station.name}}</h5>
+                        <p class="card-text"><strong>Code:</strong> {{station.code}}</p>
+                        <p class="card-text"><strong>State:</strong> {{station.state_name || 'Not Available'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

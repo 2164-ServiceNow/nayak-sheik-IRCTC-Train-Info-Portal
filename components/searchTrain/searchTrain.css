@@ -1,0 +1,90 @@
+/* Styling for the heading */
+.heading {
+    padding: 15px;
+    background-color: antiquewhite;
+    text-align: center;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for the search results section */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    width: 18rem;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Styling for card body */
+.card-body {
+    padding: 20px;
+    background-color: #f9f9f9;  /* Light background for contrast */
+    border-radius: 8px;
+    text-align: center;  /* Center align content for better visual balance */
+    color: #333;  /* Darker text for readability */
+    transition: background-color 0.3s ease;  /* Smooth background transition on hover */
+}
+
+/* Hover effect for card-body */
+.card-body:hover {
+    background-color: #e0e0e0;  /* Subtle darker shade on hover */
+}
+
+/* Styling for the card title */
+.card-title {
+    font-size: 1.1rem;
+    color: #007bff;  /* Accent color for titles */
+    font-weight: 600;  /* Slightly less bold for a softer look */
+    margin-bottom: 10px;  /* Spacing between title and content */
+}
+
+/* Styling for the card subtitle (train number) */
+.card-subtitle {
+    font-size: 1rem;
+    color: #555;  /* Slightly lighter color for secondary text */
+    margin-bottom: 8px;  /* Spacing below subtitle */
+}
+
+/* Styling for card text (train details) */
+.card-text {
+    font-size: 1rem;
+    color: #555;  /* Slightly lighter color for secondary text */
+    line-height: 1.5;  /* Improve readability */
+}
+
+/* Adding spacing to the card body */
+.card-body p {
+    margin: 10px 0;  /* Spacing between the paragraph elements */
+}
+
+/* Styling for results section */
+h4 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 20px;
+    color: darkblue;
+}
+
+/* Styling for the overall container */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}

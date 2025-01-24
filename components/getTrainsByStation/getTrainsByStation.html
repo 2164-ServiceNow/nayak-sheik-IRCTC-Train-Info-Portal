@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="components/getTrainsByStation/getTrainsByStation.css">
+</head>
+<body>
+    <div>
+        <h3>Train By Station:</h3>
+     
+        <!-- Check if trainByStation data is available -->
+        <div ng-if="getTrainsByStations">
+           
+            <div ng-repeat="train in getTrainsByStations.data.originating" class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Train Name and Details</h5>
+                   
+                    <!-- Display train details -->
+                    <h5 class="card-title">{{train.trainNo}} - {{train.trainName}}</h5>
+                    <p class="card-text"><strong>Departure Time:</strong> {{train.departureTime}}</p>
+                   
+                    <!-- Display available classes -->
+                    <p class="card-text"><strong>Classes:</strong></p>
+                    <ul>
+                        <li ng-repeat="classType in train.classes">{{classType}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+

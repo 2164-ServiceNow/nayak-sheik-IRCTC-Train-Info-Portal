@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="components/searchTrain/searchTrain.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Heading Section -->
+        <h3 class="heading">Search Train</h3>
+    
+        <!-- Check if searchTrains data is available -->
+        <div ng-if="searchTrains && searchTrains.data && searchTrains.data.length > 0">
+            <h4>Results:</h4>
+
+            <!-- Container for cards to display results -->
+            <div class="card-container">
+                <div ng-repeat="train in searchTrains.data" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{train.train_name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Train Number: {{train.train_number}}</h6>
+                        <p class="card-text"><strong>English Train Name:</strong> {{train.eng_train_name}}</p>
+                        <p class="card-text"><strong>New Train Number:</strong> {{train.new_train_number || 'Not Available'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
