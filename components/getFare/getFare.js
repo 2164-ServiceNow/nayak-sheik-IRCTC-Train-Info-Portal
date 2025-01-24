@@ -9,7 +9,7 @@ angular.module('getFare', [])
 
         // Headers for the API request
         const myHeaders = {
-            "x-apihub-key": "sYREiZOAlOq7sQBm0Vy1Mp8YjoBw8nDE0im9kiad8uAUfxjK7O",
+            "x-apihub-key": "asWEaLJmfOcoPdY5sZsFSnYTN6SKs6pgn6VRisM-znswtVzCfL",
             "x-apihub-host": "IRCTC.allthingsdev.co",
             "x-apihub-endpoint": "5cc3caa8-66a6-41c6-ac2d-a6f18458f11b"
         };
