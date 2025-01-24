@@ -27,7 +27,6 @@ angular.module('getTrainClasses', [])
                         headers: myHeaders
                     }).then((response) => {
                         console.log("API Response:", response);
-                        console.log(response.data.data);
                         // Ensure response.data is assigned to trainClasses correctly
                         $scope.trainClasses = response.data || []; // Fallback to empty array if response is empty
                     }).catch((error) => {

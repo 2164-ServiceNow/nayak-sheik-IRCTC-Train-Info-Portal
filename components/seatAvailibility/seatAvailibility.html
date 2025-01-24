@@ -35,6 +35,11 @@
     <!-- Button to Trigger Seat Search -->
     <button ng-click="searchSeats()">Search</button>
 
+    <!-- Display Error Message Dynamically if Status is False -->
+    <div ng-if="errorMessage">
+        <p style = "background-color: red;"><strong>Error:</strong> {{errorMessage}}</p>
+    </div>
+
     <!-- Display Results if Available -->
     <div ng-if="seatAvailabilities && seatAvailabilities.data && seatAvailabilities.data.length > 0">
         <h4>Results:</h4>
@@ -51,9 +56,5 @@
     <!-- Display Message if No Results Found -->
     <div ng-if="!seatAvailabilities || !seatAvailabilities.data || seatAvailabilities.data.length === 0">
         <h4>No seats available or no results found.</h4>
-    </div>
-
-    <div ng-if="statusData && statusData.status === false">
-        <p>{{statusData.message}}</p>
     </div>
 </div>

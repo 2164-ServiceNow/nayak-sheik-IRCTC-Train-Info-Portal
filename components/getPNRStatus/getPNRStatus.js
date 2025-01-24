@@ -14,7 +14,7 @@ angular.module('getPnrStatus', [])
 
                 // Define the headers for the request
                 const myHeaders = {
-                    "x-apihub-key": "tj7VDBgHG6-pFQSFngyHEi5pyaK9fE7Dr9y3O1ErWfywyY0CuW",
+                    "x-apihub-key": "asWEaLJmfOcoPdY5sZsFSnYTN6SKs6pgn6VRisM-znswtVzCfL",
                     "x-apihub-host": "IRCTC.allthingsdev.co",
                     "x-apihub-endpoint": "941600b8-85da-484b-ae57-b33b7035182b"
                 };

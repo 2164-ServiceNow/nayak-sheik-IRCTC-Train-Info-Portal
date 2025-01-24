@@ -13,7 +13,7 @@ angular.module('searchTrain', [])
                 $scope.searchValue = newQuery;
 
                 const myHeaders = {
-                    "x-apihub-key": "tj7VDBgHG6-pFQSFngyHEi5pyaK9fE7Dr9y3O1ErWfywyY0CuW",
+                    "x-apihub-key": "asWEaLJmfOcoPdY5sZsFSnYTN6SKs6pgn6VRisM-znswtVzCfL",
                     "x-apihub-host": "IRCTC.allthingsdev.co",
                     "x-apihub-endpoint": "1ab9fb95-234d-4cfd-8354-c3dc9f7ecb48"
                 };

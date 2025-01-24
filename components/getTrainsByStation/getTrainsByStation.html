@@ -1,23 +1,62 @@
 <div>
-    <h3>Train By Station:</h3>
+    <h3>Trains By Station:</h3>
 
-    <!-- Check if trainByStation data is available -->
-    <div ng-if="getTrainsByStations">
-        <h4>Results:</h4>
-        <div ng-repeat="train in getTrainsByStations.data.originating" class="card" style="width: 18rem;">
+    <!-- Display Originating Trains -->
+    <div ng-if="trainsByStations.originating.length > 0">
+        <h4>Originating Trains:</h4>
+        <div ng-repeat="train in trainsByStations.originating" class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Station Name and Details</h5>
-                
-                <!-- Display train details -->
                 <h5 class="card-title">{{train.trainNo}} - {{train.trainName}}</h5>
                 <p class="card-text"><strong>Departure Time:</strong> {{train.departureTime}}</p>
-                
+
                 <!-- Display available classes -->
                 <p class="card-text"><strong>Classes:</strong></p>
                 <ul>
                     <li ng-repeat="classType in train.classes">{{classType}}</li>
                 </ul>
+                <p ng-if="train.classes.length === 0">No classes available for this train.</p>
             </div>
         </div>
+    </div>
+
+    <!-- Display Passing Trains -->
+    <div ng-if="trainsByStations.passing.length > 0">
+        <h4>Passing Trains:</h4>
+        <div ng-repeat="train in trainsByStations.passing" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{train.trainNo}} - {{train.trainName}}</h5>
+                <p class="card-text"><strong>Arrival Time:</strong> {{train.arrivalTime}}</p>
+
+                <!-- Display available classes -->
+                <p class="card-text"><strong>Classes:</strong></p>
+                <ul>
+                    <li ng-repeat="classType in train.classes">{{classType}}</li>
+                </ul>
+                <p ng-if="train.classes.length === 0">No classes available for this train.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Display Destination Trains -->
+    <div ng-if="trainsByStations.destination.length > 0">
+        <h4>Destination Trains:</h4>
+        <div ng-repeat="train in trainsByStations.destination" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{train.trainNo}} - {{train.trainName}}</h5>
+                <p class="card-text"><strong>Arrival Time:</strong> {{train.arrivalTime}}</p>
+
+                <!-- Display available classes -->
+                <p class="card-text"><strong>Classes:</strong></p>
+                <ul>
+                    <li ng-repeat="classType in train.classes">{{classType}}</li>
+                </ul>
+                <p ng-if="train.classes.length === 0">No classes available for this train.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- If no trains found -->
+    <div ng-if="trainsByStations.originating.length === 0 && trainsByStations.passing.length === 0 && trainsByStations.destination.length === 0">
+        <p>No trains found for the given station.</p>
     </div>
 </div>

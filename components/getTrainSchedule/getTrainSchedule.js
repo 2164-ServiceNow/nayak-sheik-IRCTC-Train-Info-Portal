@@ -16,7 +16,7 @@ angular.module('getTrainSchedule', [])
 
                 // Define headers for the API request
                 const myHeaders = {
-                    "x-apihub-key": "tj7VDBgHG6-pFQSFngyHEi5pyaK9fE7Dr9y3O1ErWfywyY0CuW",
+                    "x-apihub-key": "asWEaLJmfOcoPdY5sZsFSnYTN6SKs6pgn6VRisM-znswtVzCfL",
                     "x-apihub-host": "IRCTC.allthingsdev.co",
                     "x-apihub-endpoint": "33ac12da-4889-4a47-b3da-c43b67d26c8e"
                 };
