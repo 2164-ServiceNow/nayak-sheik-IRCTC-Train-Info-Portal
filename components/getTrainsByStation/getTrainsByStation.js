@@ -16,7 +16,7 @@ angular.module('getTrainsByStation', [])
                 $scope.searchValue = newQuery;
        
                 const myHeaders = {
-                    "x-apihub-key": "Ka0pFSvDDlnHLZopyvMJTgZyjoAU02-5KHSQp4ene0G1FyVtto",
+                    "x-apihub-key": "sYREiZOAlOq7sQBm0Vy1Mp8YjoBw8nDE0im9kiad8uAUfxjK7O",
                     "x-apihub-host": "IRCTC.allthingsdev.co",
                     "x-apihub-endpoint": "f4ef646d-dca2-42e9-bef0-3e681b1e1ad9"
                 };

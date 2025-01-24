@@ -17,7 +17,7 @@ angular.module('getTrainClasses', [])
                 $scope.trainNumber = newTrainNumber;
 
                 const myHeaders = {
-                    "x-apihub-key": "Ka0pFSvDDlnHLZopyvMJTgZyjoAU02-5KHSQp4ene0G1FyVtto",
+                    "x-apihub-key": "sYREiZOAlOq7sQBm0Vy1Mp8YjoBw8nDE0im9kiad8uAUfxjK7O",
                     "x-apihub-host": "IRCTC.allthingsdev.co",
                     "x-apihub-endpoint": "3f920cf0-c782-42bc-a88d-4911ba710230"
                 };

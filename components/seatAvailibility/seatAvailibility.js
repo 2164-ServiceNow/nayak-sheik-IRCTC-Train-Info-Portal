@@ -22,9 +22,10 @@ angular.module('seatAvailibility', [])
             const myHeaders = {
                 "X-RapidAPI-Host": "irctc1.p.rapidapi.com",
                 "X-RapidAPI-Key": "fb8dbe5110mshcf13c98485917cfp100148jsnc69d7b39758b",
-                "x-apihub-key": "Ka0pFSvDDlnHLZopyvMJTgZyjoAU02-5KHSQp4ene0G1FyVtto",
+                "x-apihub-key": "sYREiZOAlOq7sQBm0Vy1Mp8YjoBw8nDE0im9kiad8uAUfxjK7O",
                 "x-apihub-host": "IRCTC.allthingsdev.co",
                 "x-apihub-endpoint": "d98f4bb4-8510-4d9e-81a1-9f18eeb38a63"
+                
             };
 
             // Construct the API URL dynamically with the form inputs
