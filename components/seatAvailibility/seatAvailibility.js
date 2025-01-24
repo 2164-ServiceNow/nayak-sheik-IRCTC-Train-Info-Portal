@@ -6,8 +6,8 @@ angular.module('seatAvailibility', [])
         $scope.errorMessage = '';  // To store the error message
 
         // Clear previous search value when this component is initialized
-        searchBarService.setQuery('');  // This will clear the search query in the search bar
-        $scope.searchValue = '';  // Clear the local search input as well
+        // searchBarService.setQuery('');  // This will clear the search query in the search bar
+        // $scope.searchValue = '';  // Clear the local search input as well
 
         // Initialize query parameters with default values
         $scope.classType = '';
