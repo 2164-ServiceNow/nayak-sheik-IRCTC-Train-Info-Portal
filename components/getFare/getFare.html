@@ -16,14 +16,39 @@
     </div>
 
     <!-- Check if fareData is available -->
-    <div ng-if="fareData">
+    <div ng-if="fareData && fareData.data">
         <h4>Fare Details:</h4>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Train Fare Information</h5>
+        
+        <!-- Loop through each class type to display the fare details -->
+        <div ng-repeat="classInfo in fareData.data.general">
+            <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Class Type: {{classInfo.classType}}</h5>
+                    
+                    <!-- Display fare breakup -->
+                    <p class="card-text"><strong>Base Fare:</strong> ₹{{classInfo.breakup[0].cost}}</p>
+                    <p class="card-text"><strong>Reservation Charges:</strong> ₹{{classInfo.breakup[1].cost}}</p>
+                    <p class="card-text"><strong>GST:</strong> ₹{{classInfo.breakup[2].cost}}</p>
+                    <p class="card-text"><strong>Total Fare:</strong> ₹{{classInfo.breakup[3].cost}}</p>
+                </div>
+            </div>
+        </div>
 
-                <!-- Display fare details -->
-                <p class="card-text"><strong>Fare:</strong> {{fareData.data.general[0].fare}}</p>
+        <!-- Display Tatkal fare details if available -->
+        <div ng-repeat="classInfo in fareData.data.tatkal">
+            <div ng-if="classInfo.fare">
+                <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Tatkal Class Type: {{classInfo.classType}}</h5>
+
+                        <!-- Display Tatkal fare breakup -->
+                        <p class="card-text"><strong>Base Fare:</strong> ₹{{classInfo.breakup[0].cost}}</p>
+                        <p class="card-text"><strong>Reservation Charges:</strong> ₹{{classInfo.breakup[1].cost}}</p>
+                        <p class="card-text"><strong>GST:</strong> ₹{{classInfo.breakup[2].cost}}</p>
+                        <p class="card-text"><strong>Tatkal Charges:</strong> ₹{{classInfo.breakup[3].cost}}</p>
+                        <p class="card-text"><strong>Total Fare:</strong> ₹{{classInfo.breakup[4].cost}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
