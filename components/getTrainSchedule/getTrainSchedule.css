@@ -1,115 +1,116 @@
-/* General Styling */
+/* General Page Styling */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
+    color: #333;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
-div {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Headings */
-h3 {
-    font-size: 1.8rem;
-    color: #007bff;
+/* Heading Styling */
+.heading {
+    padding: 15px;
+    background-color: antiquewhite;
     text-align: center;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
+    color: #333;
 }
 
 h4 {
     font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-align: left;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 h5 {
     font-size: 1.3rem;
-    color: #555;
+    color: #333;
+    margin-top: 20px;
     margin-bottom: 10px;
-    text-align: left;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-/* Card Container */
-.card {
-    width: 100%;
-    max-width: 350px;
-    margin: 20px auto;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Card Body */
-.card-body {
-    padding: 20px;
-}
-
-.card-title {
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 10px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.card-text {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #555;
-    line-height: 1.4;
-}
-
-.card-text strong {
-    color: #000;
-}
-
-/* List Styling */
+/* Styling for Lists */
 ul {
-    padding-left: 20px;
-    margin: 10px 0;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 li {
     font-size: 1rem;
     color: #555;
-    margin-bottom: 5px;
-    list-style-type: disc;
+    margin-bottom: 8px;
 }
 
-/* Empty Data Styling */
-div[ng-if="trainSchedule && !trainSchedule.data"] {
-    text-align: center;
-    padding: 30px;
+/* Card Container Styling */
+.card {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Effect for Card */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    color: #333;
+    text-align: left;
+}
+
+/* Card Title Styling */
+.card-title {
     font-size: 1.2rem;
-    color: #888;
-    font-style: italic;
+    font-weight: bold;
+    color: #007bff;  /* Accent color for titles */
+    margin-bottom: 10px;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
+/* Card Text Styling */
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.card-text strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Spacing and Margin for Text */
+.card-body p {
+    margin-bottom: 15px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
     .card {
-        display: inline-block;
-        margin-right: 15px;
+        width: 90%;
+        max-width: 300px;
+        margin: 15px auto;
     }
 
-    div {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4, h5 {
+        font-size: 1.2rem;
     }
 }

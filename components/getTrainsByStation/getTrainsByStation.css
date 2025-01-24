@@ -7,19 +7,15 @@ body {
     color: #333;
 }
 
-div {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
 /* Headings */
 h3 {
-    font-size: 1.8rem;
-    color: #007bff;
+    padding: 15px;
+    background-color: antiquewhite;
     text-align: center;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
+    color: #333;
 }
 
 h4 {
@@ -83,25 +79,10 @@ li {
     list-style-type: disc;
 }
 
-/* Empty Data Styling */
-div[ng-if="getTrainsByStations && getTrainsByStations.data.originating.length == 0"] {
-    text-align: center;
-    padding: 30px;
-    font-size: 1.2rem;
-    color: #888;
-    font-style: italic;
-}
-
 /* Responsive Design */
 @media (min-width: 768px) {
     .card {
         display: inline-block;
         margin-right: 15px;
-    }
-
-    div {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
     }
 }

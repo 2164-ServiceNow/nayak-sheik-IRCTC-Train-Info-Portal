@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="IRCTCApp">
 <head>
- 
     <!-- Load AngularJS 1.8.2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js"></script>
    
@@ -17,30 +16,37 @@
     <title>IRCTC SPA</title>
  
     <style>
+
+        /* Styling for the navigation bar */
         .nav-links {
             display: flex;
             gap: 20px;
             justify-content: center;
             padding: 10px;
-            background-color: #f8f9fa; /* Background color for the nav */
-            border-radius: 10px; /* Rounded corners for the navigation box */
+            background-color: #f8f9fa; /* Light background for the navbar */
+            border-radius: 10px; /* Rounded corners for the navbar */
         }
- 
+
+        /* Styling for the navigation links */
         .nav-links a {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #007bff;  /* Base blue color */
             color: white;
             text-decoration: none;
-            border-radius: 5px; /* Ensure rounded corners for the links */
+            border-radius: 5px; /* Rounded corners for links */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;  /* Smooth transition for the hover effect */
         }
- 
+
+        /* Hover effect with gradient */
         .nav-links a:hover {
-            background-color: #0056b3; /* Darker blue when hovered */
+            background-color: #0056b3; /* Slightly darker blue */
+            background-image: linear-gradient(145deg, #0056b3, #007bff); /* Gradient effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Enhanced shadow for depth */
+            transform: translateY(-2px);  /* Slight upward movement on hover */
         }
- 
-        /* Style for marquee */
+
+        /* Additional styling for marquee */
         .marquee {
             background-color: #f1f1f1;
             color: #333;
@@ -48,9 +54,28 @@
             padding: 15px;
             font-weight: bold;
         }
+
+        /* Footer styling */
+        .footer {
+            background-color: #343a40; /* Dark background for footer */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
     </style>
 </head>
-<body ng-controller = "AppController">
+<body ng-controller="AppController">
+
+    <!-- Navigation Links -->
     <div class="nav-links">
         <!-- Navigation links -->
         <a href="#/">Main Page</a>
@@ -62,7 +87,6 @@
         <a href="#!getTrainClasses">Check Available Classes Here</a>
         <a href="#!getFare">Check Fare For Your Trip</a>
         <a href="#!/seatAvailibility">Find Available seats</a>
-       
     </div>
  
     <!-- Marquee with captions -->
@@ -90,6 +114,11 @@
     <!-- This is where views will be injected based on routes -->
     <div ng-view></div>
  
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 IRCTC | <a href="#!/privacy">Privacy Policy</a> | <a href="#!/terms">Terms & Conditions</a></p>
+    </footer>
+
     <!-- Script Files -->
     <script src="app.js"></script>
     <script src="pages/searchStationPage/searchStationPage.js"></script>
