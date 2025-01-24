@@ -1,55 +1,63 @@
-<div>
-    <h3>Get Fare Details:</h3>
-
-    <!-- Form for input fields -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="components/getFare/getFare.css">
+</head>
+<body>
     <div>
-        <label for="trainNo">Train Number:</label>
-        <input type="text" id="trainNo" ng-model="trainNo" placeholder="Enter Train Number">
-
-        <label for="fromStationCode">From Station Code:</label>
-        <input type="text" id="fromStationCode" ng-model="fromStationCode" placeholder="Enter From Station Code">
-
-        <label for="toStationCode">To Station Code:</label>
-        <input type="text" id="toStationCode" ng-model="toStationCode" placeholder="Enter To Station Code">
-
-        <button ng-click="getFare()">Get Fare</button>
-    </div>
-
-    <!-- Check if fareData is available -->
-    <div ng-if="fareData && fareData.data">
-        <h4>Fare Details:</h4>
+        <h3>Get Fare Details:</h3>
         
-        <!-- Loop through each class type to display the fare details -->
-        <div ng-repeat="classInfo in fareData.data.general">
-            <div class="card" style="width: 18rem; margin-bottom: 10px;">
-                <div class="card-body">
-                    <h5 class="card-title">Class Type: {{classInfo.classType}}</h5>
-                    
-                    <!-- Display fare breakup -->
-                    <p class="card-text"><strong>Base Fare:</strong> ₹{{classInfo.breakup[0].cost}}</p>
-                    <p class="card-text"><strong>Reservation Charges:</strong> ₹{{classInfo.breakup[1].cost}}</p>
-                    <p class="card-text"><strong>GST:</strong> ₹{{classInfo.breakup[2].cost}}</p>
-                    <p class="card-text"><strong>Total Fare:</strong> ₹{{classInfo.breakup[3].cost}}</p>
-                </div>
-            </div>
+        <!-- Form for input fields -->
+        <div>
+            <label for="trainNo">Train Number:</label>
+            <input type="text" id="trainNo" ng-model="trainNo" placeholder="Enter Train Number">
+    
+            <label for="fromStationCode">From Station Code:</label>
+            <input type="text" id="fromStationCode" ng-model="fromStationCode" placeholder="Enter From Station Code">
+    
+            <label for="toStationCode">To Station Code:</label>
+            <input type="text" id="toStationCode" ng-model="toStationCode" placeholder="Enter To Station Code">
+    
+            <button ng-click="getFare()">Get Fare</button>
         </div>
-
-        <!-- Display Tatkal fare details if available -->
-        <div ng-repeat="classInfo in fareData.data.tatkal">
-            <div ng-if="classInfo.fare">
+    
+        <!-- Check if fareData is available -->
+        <div ng-if="fareData && fareData.data">
+            <h4>Fare Details:</h4>
+            
+            <!-- Loop through each class type to display the fare details -->
+            <div ng-repeat="classInfo in fareData.data.general">
                 <div class="card" style="width: 18rem; margin-bottom: 10px;">
                     <div class="card-body">
-                        <h5 class="card-title">Tatkal Class Type: {{classInfo.classType}}</h5>
-
-                        <!-- Display Tatkal fare breakup -->
+                        <h5 class="card-title">Class Type: {{classInfo.classType}}</h5>
+                        
+                        <!-- Display fare breakup -->
                         <p class="card-text"><strong>Base Fare:</strong> ₹{{classInfo.breakup[0].cost}}</p>
                         <p class="card-text"><strong>Reservation Charges:</strong> ₹{{classInfo.breakup[1].cost}}</p>
                         <p class="card-text"><strong>GST:</strong> ₹{{classInfo.breakup[2].cost}}</p>
-                        <p class="card-text"><strong>Tatkal Charges:</strong> ₹{{classInfo.breakup[3].cost}}</p>
-                        <p class="card-text"><strong>Total Fare:</strong> ₹{{classInfo.breakup[4].cost}}</p>
+                        <p class="card-text"><strong>Total Fare:</strong> ₹{{classInfo.breakup[3].cost}}</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Display Tatkal fare details if available -->
+            <div ng-repeat="classInfo in fareData.data.tatkal">
+                <div ng-if="classInfo.fare">
+                    <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Tatkal Class Type: {{classInfo.classType}}</h5>
+    
+                            <!-- Display Tatkal fare breakup -->
+                            <p class="card-text"><strong>Base Fare:</strong> ₹{{classInfo.breakup[0].cost}}</p>
+                            <p class="card-text"><strong>Reservation Charges:</strong> ₹{{classInfo.breakup[1].cost}}</p>
+                            <p class="card-text"><strong>GST:</strong> ₹{{classInfo.breakup[2].cost}}</p>
+                            <p class="card-text"><strong>Tatkal Charges:</strong> ₹{{classInfo.breakup[3].cost}}</p>
+                            <p class="card-text"><strong>Total Fare:</strong> ₹{{classInfo.breakup[4].cost}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>
