@@ -1,12 +1,14 @@
-angular.module('IRCTCApp')
-    .service('searchBarService', function(){
-        this.query = '';
+angular.module('searchBar')
+    .service('searchBarService', function() {
+        let query = '';
 
-        this.setQuery = function(query){
-            this.query = query
-        }
+        // Get the current query
+        this.getQuery = function() {
+            return query;
+        };
 
-        this.getQuery = function(){
-            return this.query
-        }
-    })
+        // Set a new query
+        this.setQuery = function(newQuery) {
+            query = newQuery;
+        };
+    });

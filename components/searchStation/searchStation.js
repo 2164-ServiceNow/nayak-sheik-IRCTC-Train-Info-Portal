@@ -5,6 +5,10 @@ angular.module('searchStation', [])
         $scope.searchStations = "";
         $scope.searchValue = ''
 
+        // Clear previous search value when this component is initialized
+        searchBarService.setQuery('');  // This will clear the search query in the search bar
+        $scope.searchValue = '';  // Clear the local search input as well
+
         $scope.$watch(function() {
             return searchBarService.getQuery();
         }, function(newQuery) {

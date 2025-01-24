@@ -10,7 +10,7 @@
         <h3 class="heading">Search Train</h3>
     
         <!-- Check if searchTrains data is available -->
-        <div ng-if="searchTrains">
+        <div ng-if="searchTrains && searchTrains.data && searchTrains.data.length > 0">
             <h4>Results:</h4>
 
             <!-- Container for cards to display results -->
